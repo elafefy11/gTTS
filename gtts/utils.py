@@ -65,10 +65,12 @@ def _len(text):
     """
     try:
         # Python 2
-        return len(unicode(text))
+        #return len(unicode(text))
+        return len(unicode(text,'utf-8'))
     except NameError:  # pragma: no cover
         # Python 3
-        return len(text)
+        #return len(text)
+        return len(unicode(text,'utf-8'))
 
 
 def _clean_tokens(tokens):
